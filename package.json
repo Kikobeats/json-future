@@ -1,0 +1,44 @@
+{
+  "name": "json-future",
+  "description": "Unbelievable JSON interface.",
+  "homepage": "https://github.com/Kikobeats/json-future",
+  "version": "0.0.0",
+  "main": "./index.js",
+  "author": {
+    "email": "josefrancisco.verdu@gmail.com",
+    "name": "Kiko Beats",
+    "url": "https://github.com/Kikobeats"
+  },
+  "repository": "Kikobeats/json-future",
+  "bugs": {
+    "url": "https://github.com/Kikobeats/json-future/issues"
+  },
+  "keywords": [],
+  "dependencies": {
+    "cb2promise": "latest",
+    "coffee-script": "latest",
+    "errorifier": "latest",
+    "json-parse-async": "latest"
+  },
+  "devDependencies": {
+    "browserify": "latest",
+    "browserify-fs": "~1.0.0",
+    "coffeeify": "latest",
+    "gulp": "latest",
+    "gulp-header": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "mocha": "latest",
+    "should": "latest",
+    "vinyl-buffer": "latest",
+    "vinyl-source-stream": "latest"
+  },
+  "engines": {
+    "node": ">= 0.10.0",
+    "npm": ">= 1.4.0"
+  },
+  "scripts": {
+    "test": "sh test/test.sh"
+  },
+  "license": "MIT"
+}
