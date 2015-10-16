@@ -1,7 +1,7 @@
 # json-future
 
 ![Last version](https://img.shields.io/github/tag/Kikobeats/json-future.svg?style=flat-square)
-[![Coverage Status](http://img.shields.io/coveralls/Kikobeats/json-future/master.svg?style=flat-square)](https://coveralls.io/r/Kikobeats/json-future?branch=master)
+[![Build Status](http://img.shields.io/travis/Kikobeats/json-future/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/json-future)
 [![Dependency status](http://img.shields.io/david/Kikobeats/json-future.svg?style=flat-square)](https://david-dm.org/Kikobeats/json-future)
 [![Dev Dependencies Status](http://img.shields.io/david/dev/Kikobeats/json-future.svg?style=flat-square)](https://david-dm.org/Kikobeats/json-future#info=devDependencies)
 [![NPM Status](http://img.shields.io/npm/dm/json-future.svg?style=flat-square)](https://www.npmjs.org/package/json-future)
