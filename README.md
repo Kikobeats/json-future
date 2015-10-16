@@ -44,7 +44,7 @@ var jsonFuture = require('json-future');
 Don't be afraid to replace for the default `JSON` object. The library is specially designed for be compatible and don't break your code:
 
 ```js
-var JSON = require('json-future');
+JSON = require('json-future');
 ```
 
 ## API
