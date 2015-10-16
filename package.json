@@ -13,16 +13,27 @@
   "bugs": {
     "url": "https://github.com/Kikobeats/json-future/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "JSON",
+    "async",
+    "interface",
+    "future",
+    "write",
+    "load",
+    "stringify",
+    "parse"
+  ],
   "dependencies": {
     "cb2promise": "latest",
     "coffee-script": "latest",
     "errorifier": "latest",
-    "json-parse-async": "latest"
+    "json-parse-async": "latest",
+    "load-json-file": "latest",
+    "nodeify": "latest",
+    "write-json-file": "latest"
   },
   "devDependencies": {
     "browserify": "latest",
-    "browserify-fs": "~1.0.0",
     "coffeeify": "latest",
     "gulp": "latest",
     "gulp-header": "latest",

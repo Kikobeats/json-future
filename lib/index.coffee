@@ -1,24 +1,47 @@
 'use strict'
 
-fs         = require 'fs'
-Args       = require 'args-js'
-promise    = require 'cb2promise'
-Errorifier = require 'errorifier'
-parseJSON  = require 'json-parse-async'
+Args          = require 'args-js'
+nodeify       = require 'nodeify'
+promise       = require 'cb2promise'
+Errorifier    = require 'errorifier'
+parseJson     = require 'parse-json'
+loadJsonFile  = require 'load-json-file'
+writeJsonFile = require 'write-json-file'
 
 _stringify = (data, replacer, space) ->
   JSON.stringify(data, replacer, space) + '\n'
 
-_stringifyAsync = ->
-  {data, replacer, space, cb}  = Args([
-    { data    : Args.OBJECT   | Args.Required              }
-    { replacer: Args.FUNCTION | Args.Optional              }
-    { space   : Args.NUMBER   | Args.Optional, _default: 2 }
-    { cb      : Args.FUNCTION | Args.Optional              }
-  ], arguments)
+_stringifyAsync = (data, replacer, space, cb) ->
+  content = null
+  error = null
 
   try
-    content = JSON.stringify(data, replacer, space) + '\n'
+    content = _stringify data, replacer, space
+  catch err
+    content = {}
+    error = new Errorifier
+      code: 'ENOVALIDJSON',
+      message: err.message
+  finally
+    process.nextTick ->
+      cb null, content
+
+_loadAsync = loadJsonFile
+
+_load = loadJsonFile.sync
+
+_saveAsync = writeJsonFile
+
+_save = writeJsonFile.sync
+
+_parse = parseJson
+
+_parseAsync = (data, reviver, filename, cb) ->
+  content = null
+  error = null
+
+  try
+    content = _parse data, reviver, filename
   catch err
     content = {}
     error = new Errorifier
@@ -28,74 +51,77 @@ _stringifyAsync = ->
     process.nextTick ->
       cb error, content
 
-_loadAsync = (filepath, opts, cb) ->
-  fs.readFile filepath, opts, cb
-
-_load = (filepath, opts) ->
-  fs.readFileSync filepath, opts
-
-_saveAsync = (filepath, data, opts, cb) ->
-  _stringifyAsync data, opts.replacer, (err, data) ->
-    return cb err, data if err
-    fs.writeFile filepath, data, opts, cb
-
-_save = (filepath, data, opts) ->
-  fs.writeFileSync filepath, _stringify(data), opts
-
 module.exports =
 
-  stringifyAsync: (data, replacer, space, cb)->
-    return promise _stringifyAsync, data unless cb
-    _stringifyAsync data, cb
+  stringifyAsync: ->
+    args = Array.prototype.slice.call arguments
+    cb = if typeof args[args.length - 1] is 'function' then args.pop() else null
+
+    {data, replacer, space}  = Args([
+      { data    : Args.OBJECT   | Args.Required              }
+      { replacer: Args.FUNCTION | Args.Optional              }
+      { space   : Args.NUMBER   | Args.Optional, _default: 2 }
+    ], args)
+
+    return promise _stringifyAsync, data, replacer, space unless cb
+    _stringifyAsync data, replacer, space, cb
 
   stringify: ->
     {data, replacer, space}  = Args([
-      { data    : Args.OBJECT   | Args.Required             }
-      { replacer: Args.FUNCTION | Args.Optional             }
-      { space   : Args.NUMBER   | Args.Optional _DEFAULT: 2 }
+      { data    : Args.OBJECT   | Args.Required              }
+      { replacer: Args.FUNCTION | Args.Optional              }
+      { space   : Args.NUMBER   | Args.Optional, _default: 2 }
     ], arguments)
 
     _stringify data, replacer, space
 
-  parseAsync: parseJSON
+  parseAsync: ->
+    args = Array.prototype.slice.call arguments
+    cb = if typeof args[args.length - 1] is 'function' then args.pop() else null
 
-  parse: JSON.parse
+    {data, reviver, filename}  = Args([
+      { data     : Args.STRING   | Args.Required }
+      { reviver  : Args.FUNCTION | Args.Optional }
+      { filename : Args.STRING   | Args.Optional }
+    ], args)
+
+    return promise _parseAsync, data, reviver, filename unless cb
+    _parseAsync data, reviver, filename, cb
+
+  parse: parseJson
 
   loadAsync: ->
-    OPTIONS =
-      encoding: 'utf8'
     {filepath, opts, cb}  = Args([
-      { filepath : Args.STRING   | Args.Required                             }
-      { opts      : Args.OBJECT  | Args.Optional, _default: encoding: 'utf8' }
-      { cb       : Args.FUNCTION | Args.Optional                             }
+      { filepath : Args.STRING   | Args.Required }
+      { cb       : Args.FUNCTION | Args.Optional }
     ], arguments)
 
-    return promise _loadAsync, filepath, opts unless cb
-    _loadAsync filepath, opts, cb
+    return nodeify _loadAsync(filepath), cb if cb
+    _loadAsync filepath
 
   load: ->
     {filepath, opts}  = Args([
-      { filepath : Args.STRING   | Args.Required                             }
-      { opts      : Args.OBJECT  | Args.Optional, _default: encoding: 'utf8' }
+      { filepath : Args.STRING | Args.Required }
     ], arguments)
 
-    _load filepath, opts
+    _load filepath
 
   saveAsync: ->
     {filepath, data, opts, cb}  = Args([
       { filepath : Args.STRING   | Args.Required                             }
       { data     : Args.OBJECT   | Args.Required                             }
-      { opts      : Args.OBJECT  | Args.Optional, _default: encoding: 'utf8' }
+      { opts     : Args.OBJECT   | Args.Optional, _default: indent: '  '     }
       { cb       : Args.FUNCTION | Args.Optional                             }
     ], arguments)
 
-    return promise _saveAsync, filepath, data, opts unless cb
-    _saveAsync filepath, data, opts, cb
+    return nodeify _saveAsync(filepath, data, opts), cb if cb
+    _saveAsync filepath
 
   save: ->
-    {filepath, data, opts}  = Args([
-      { filepath : Args.STRING   | Args.Required                             }
-      {opts      : Args.OBJECT   | Args.Optional, _default: encoding: 'utf8' }
+    {filepath, data, opts, cb}  = Args([
+      { filepath : Args.STRING | Args.Required                         }
+      { data     : Args.OBJECT | Args.Required                         }
+      { opts     : Args.OBJECT | Args.Optional, _default: indent: '  ' }
     ], arguments)
 
     _save filepath, data, opts
