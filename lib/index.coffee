@@ -1,16 +1,24 @@
 'use strict'
 
 fs         = require 'fs'
-os         = require 'os'
+Args       = require 'args-js'
 promise    = require 'cb2promise'
 Errorifier = require 'errorifier'
 parseJSON  = require 'json-parse-async'
 
-_stringifySync = (data) -> JSON.stringify(data, null, 2) + os.EOL
+_stringify = (data, replacer, space) ->
+  JSON.stringify(data, replacer, space) + '\n'
 
-_stringify = (data, cb) ->
+_stringifyAsync = ->
+  {data, replacer, space, cb}  = Args([
+    { data    : Args.OBJECT   | Args.Required              }
+    { replacer: Args.FUNCTION | Args.Optional              }
+    { space   : Args.NUMBER   | Args.Optional, _default: 2 }
+    { cb      : Args.FUNCTION | Args.Optional              }
+  ], arguments)
+
   try
-    content = JSON.stringify(data, null, 2) + os.EOL
+    content = JSON.stringify(data, replacer, space) + '\n'
   catch err
     content = {}
     error = new Errorifier
@@ -20,40 +28,74 @@ _stringify = (data, cb) ->
     process.nextTick ->
       cb error, content
 
-_read = (filename, cb) ->
-  fs.readFile filename, encoding:'utf8', cb
+_loadAsync = (filepath, opts, cb) ->
+  fs.readFile filepath, opts, cb
 
-_readSync = (filename) ->
-  fs.readFile filename, encoding:'utf8'
+_load = (filepath, opts) ->
+  fs.readFileSync filepath, opts
 
-_save = (filename, data, cb) ->
-  _stringify data, (err, data) ->
+_saveAsync = (filepath, data, opts, cb) ->
+  _stringifyAsync data, opts.replacer, (err, data) ->
     return cb err, data if err
-    fs.writeFile filename, data, encoding:'utf8', cb
+    fs.writeFile filepath, data, opts, cb
 
-_saveSync = (filename, data) ->
-  fs.writeFile filename, _stringifySync(data), encoding:'utf8'
-
+_save = (filepath, data, opts) ->
+  fs.writeFileSync filepath, _stringify(data), opts
 
 module.exports =
 
-  stringify: (data, cb) ->
-    return promise _stringify, data if arguments.length is 1
-    _stringify data, cb
+  stringifyAsync: (data, replacer, space, cb)->
+    return promise _stringifyAsync, data unless cb
+    _stringifyAsync data, cb
 
-  stringifySync: _stringifySync
+  stringify: ->
+    {data, replacer, space}  = Args([
+      { data    : Args.OBJECT   | Args.Required             }
+      { replacer: Args.FUNCTION | Args.Optional             }
+      { space   : Args.NUMBER   | Args.Optional _DEFAULT: 2 }
+    ], arguments)
 
-  read: (filename, cb) ->
-    return promise _read, filename if arguments.length is 1
-    _read filename, cb
+    _stringify data, replacer, space
 
-  readSync: _readSync
+  parseAsync: parseJSON
 
-  save: (filename, data, cb) ->
-    _save filename, data, cb
-    return promise _save, filename if arguments.length is 1
+  parse: JSON.parse
 
-  saveSync: _saveSync
+  loadAsync: ->
+    OPTIONS =
+      encoding: 'utf8'
+    {filepath, opts, cb}  = Args([
+      { filepath : Args.STRING   | Args.Required                             }
+      { opts      : Args.OBJECT  | Args.Optional, _default: encoding: 'utf8' }
+      { cb       : Args.FUNCTION | Args.Optional                             }
+    ], arguments)
 
-  parse: parseJSON
-  parseSync: JSON.parse
+    return promise _loadAsync, filepath, opts unless cb
+    _loadAsync filepath, opts, cb
+
+  load: ->
+    {filepath, opts}  = Args([
+      { filepath : Args.STRING   | Args.Required                             }
+      { opts      : Args.OBJECT  | Args.Optional, _default: encoding: 'utf8' }
+    ], arguments)
+
+    _load filepath, opts
+
+  saveAsync: ->
+    {filepath, data, opts, cb}  = Args([
+      { filepath : Args.STRING   | Args.Required                             }
+      { data     : Args.OBJECT   | Args.Required                             }
+      { opts      : Args.OBJECT  | Args.Optional, _default: encoding: 'utf8' }
+      { cb       : Args.FUNCTION | Args.Optional                             }
+    ], arguments)
+
+    return promise _saveAsync, filepath, data, opts unless cb
+    _saveAsync filepath, data, opts, cb
+
+  save: ->
+    {filepath, data, opts}  = Args([
+      { filepath : Args.STRING   | Args.Required                             }
+      {opts      : Args.OBJECT   | Args.Optional, _default: encoding: 'utf8' }
+    ], arguments)
+
+    _save filepath, data, opts
