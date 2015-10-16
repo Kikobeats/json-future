@@ -31,9 +31,9 @@
     "cb2promise": "latest",
     "coffee-script": "latest",
     "errorifier": "latest",
-    "json-parse-async": "latest",
     "load-json-file": "latest",
     "nodeify": "latest",
+    "parse-json": "latest",
     "write-json-file": "latest"
   },
   "devDependencies": {
