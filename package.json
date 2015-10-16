@@ -27,6 +27,7 @@
     "write"
   ],
   "dependencies": {
+    "args-js": "latest",
     "cb2promise": "latest",
     "coffee-script": "latest",
     "errorifier": "latest",
