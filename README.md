@@ -8,6 +8,7 @@
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
 > Unbelievable and Modern JSON interface. Prollyfills propositions for ECMAScript 7.
+
 > Prollyfill: A polyfill for a not yet standardized API.
 
 ## Why
