@@ -4,8 +4,9 @@ files: [
 ]
 plugins:
 
-  prerelease:
-    'Linting config files'
+  pretrelease:
+
+    'Linting config files':
       plugin: 'bumped-finepack'
 
   postrelease:

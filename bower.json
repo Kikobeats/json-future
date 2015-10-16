@@ -1,6 +1,6 @@
 {
   "name": "json-future",
-  "description": "Unbelievable JSON interface.",
+  "description": "Unbelievable and Modern JSON interface.",
   "homepage": "https://github.com/Kikobeats/json-future",
   "version": "0.0.0",
   "main": "./dist/json-future.js",

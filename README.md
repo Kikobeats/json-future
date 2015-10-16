@@ -7,7 +7,7 @@
 [![NPM Status](http://img.shields.io/npm/dm/json-future.svg?style=flat-square)](https://www.npmjs.org/package/json-future)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> Unbelievable and modern JSON interface.
+> Unbelievable and Modern JSON interface.
 
 ## Why
 
