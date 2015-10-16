@@ -1,23 +1,19 @@
 # json-future
 
-<h1 align="center">
-  <br>
-  <img src="" alt="json-future">
-  <br>
-  <br>
-</h1>
-
 ![Last version](https://img.shields.io/github/tag/Kikobeats/json-future.svg?style=flat-square)
-[![Build Status](http://img.shields.io/travis/Kikobeats/json-future/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/json-future)
 [![Coverage Status](http://img.shields.io/coveralls/Kikobeats/json-future/master.svg?style=flat-square)](https://coveralls.io/r/Kikobeats/json-future?branch=master)
 [![Dependency status](http://img.shields.io/david/Kikobeats/json-future.svg?style=flat-square)](https://david-dm.org/Kikobeats/json-future)
 [![Dev Dependencies Status](http://img.shields.io/david/dev/Kikobeats/json-future.svg?style=flat-square)](https://david-dm.org/Kikobeats/json-future#info=devDependencies)
 [![NPM Status](http://img.shields.io/npm/dm/json-future.svg?style=flat-square)](https://www.npmjs.org/package/json-future)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-**NOTE:** more badges availables in [shields.io](http://shields.io/)
+> Unbelievable and modern JSON interface.
 
-> Unbelievable JSON interface.
+## Why
+
+* High level methods for manipulate JSON files.
+* Backward compatibility with JSON Object in Node or Browser.
+* Async support (Node Callback style and Promise).
 
 ## Install
 
@@ -43,25 +39,66 @@ and later link in your HTML:
 var jsonFuture = require('json-future');
 ```
 
+Don't be afraid to replace for the default `JSON` object. The library is specially designed for be compatible and don't break your code:
+
+```js
+var JSON = require('json-future');
+```
+
 ## API
 
-### jsonFuture(input, [options])
+In `async` methods, if you don't provide a callback for node style, then the method return a `Promise`.
 
-#### input
+### .stringify(input, [replacer], [space])
+### .stringifyAsync(input, [replacer], [space], [cb])
 
-*Required*
-Type: `string`
+Creates the `string` version of the input.
 
-Lorem ipsum.
+### .parse(input, [reviver], [filename])
+### .parseAsync(input, [reviver], [filename], [cb])
+
+Creates the `object` version of the input.
+
+### .load(filepath)
+### .loadAsync(filepath, [cb])
+
+Returns the parsed JSON.
+
+### .save(filepath, data, [options])
+### .saveAsync(filepath, data, [options], [cb])
+
+Stringify and write JSON to a file atomically.
 
 #### options
 
-##### foo
+##### indent
 
-Type: `boolean`
+Type: `string`, `number`
+Default: `\t`
+
+Indentation as a string or number of spaces.
+Pass in `null` for no formatting.
+
+##### sortKeys
+
+Type: `boolean`, `function`
 Default: `false`
 
-Lorem ipsum.
+Sort the keys recursively.
+Optionally pass in a [`compare`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) function.
+
+##### replacer
+
+Type: `function`
+
+Passed into [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#The_replacer_parameter).
+
+##### mode
+
+Type: `number`
+Default `438` *(0666 in octal)*
+
+[Mode](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) used when writing the file.
 
 ## License
 

@@ -15,7 +15,16 @@
   "bugs": {
     "url": "https://github.com/Kikobeats/json-future/issues"
   },
-  "keywords": [],
+  "keywords": [
+    "JSON",
+    "async",
+    "interface",
+    "future",
+    "write",
+    "load",
+    "stringify",
+    "parse"
+  ],
   "ignore": [
     "**/.*",
     "bower_components",
