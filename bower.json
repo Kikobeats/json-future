@@ -16,14 +16,17 @@
     "url": "https://github.com/Kikobeats/json-future/issues"
   },
   "keywords": [
+    "ECMAScript 7",
+    "ES2016",
+    "ES7",
     "JSON",
     "async",
-    "interface",
     "future",
-    "write",
+    "interface",
     "load",
+    "parse",
     "stringify",
-    "parse"
+    "write"
   ],
   "ignore": [
     "**/.*",
