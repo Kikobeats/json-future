@@ -1,7 +1,16 @@
+<a name="1.0.2"></a>
+## 1.0.2 (2015-10-20)
+
+
+* Added .parseAsync Buffer test ([f0e17b8](https://github.com/kikobeats/json-future/commit/f0e17b8))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2015-10-20)
 
 
+* 1.0.1 releases ([857636d](https://github.com/kikobeats/json-future/commit/857636d))
 * added .parseAsync Buffer support ([0f8963b](https://github.com/kikobeats/json-future/commit/0f8963b))
 
 
