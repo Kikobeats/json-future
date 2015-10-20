@@ -37,10 +37,17 @@ describe 'JSON Future ::', ->
 
   describe 'async', ->
 
-    it '.parseAsync', (done) ->
-      JSON.parseAsync FIXTURES.string, (err, data) ->
-        data.foo.should.be.equal FIXTURES.object.foo
-        done err
+    describe '.parseAsync', ->
+      it 'String', (done) ->
+        JSON.parseAsync FIXTURES.string, (err, data) ->
+          data.foo.should.be.equal FIXTURES.object.foo
+          done err
+
+      it 'Buffer', (done) ->
+        buff = new Buffer(FIXTURES.string)
+        JSON.parseAsync buff, (err, data) ->
+          data.foo.should.be.equal FIXTURES.object.foo
+          done err
 
     it '.stringifyAsync', (done) ->
       JSON.stringifyAsync FIXTURES.object, (err, string) ->

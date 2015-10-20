@@ -81,7 +81,7 @@ module.exports =
 
     {data, reviver, filename}  = Args([
       { data     : Args.STRING   | Args.Required, _check: (data) ->
-        data = data.toString() if typeof data is 'object' }
+        data = if data instanceof Buffer then data.toString() else data }
       { reviver  : Args.FUNCTION | Args.Optional }
       { filename : Args.STRING   | Args.Optional }
     ], args)
