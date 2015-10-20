@@ -80,7 +80,8 @@ module.exports =
     cb = if typeof args[args.length - 1] is 'function' then args.pop() else null
 
     {data, reviver, filename}  = Args([
-      { data     : Args.STRING   | Args.Required }
+      { data     : Args.STRING   | Args.Required, _check: (data) ->
+        data = data.toString() if typeof data is 'object' }
       { reviver  : Args.FUNCTION | Args.Optional }
       { filename : Args.STRING   | Args.Optional }
     ], args)
