@@ -34,6 +34,7 @@
     "load-json-file": "latest",
     "nodeify": "latest",
     "parse-json": "latest",
+    "wrap-sync": "latest",
     "write-json-file": "latest"
   },
   "devDependencies": {

@@ -2,29 +2,23 @@
 
 Args          = require 'args-js'
 nodeify       = require 'nodeify'
+wrapSync      = require 'wrap-sync'
 promise       = require 'cb2promise'
 Errorifier    = require 'errorifier'
 parseJson     = require 'parse-json'
 loadJsonFile  = require 'load-json-file'
 writeJsonFile = require 'write-json-file'
 
+ensureAsync = (fn, args) ->
+  process.nextTick ->
+    fn.apply null, args
+
 _stringify = (data, replacer, space) ->
   JSON.stringify(data, replacer, space) + '\n'
 
-_stringifyAsync = (data, replacer, space, cb) ->
-  content = null
-  error = null
-
-  try
-    content = _stringify data, replacer, space
-  catch err
-    content = {}
-    error = new Errorifier
-      code: 'ENOVALIDJSON',
-      message: err.message
-  finally
-    process.nextTick ->
-      cb null, content
+_stringifyAsync = ->
+  stringify = wrapSync _stringify
+  ensureAsync stringify, arguments
 
 _loadAsync = loadJsonFile
 
@@ -36,20 +30,9 @@ _save = writeJsonFile.sync
 
 _parse = parseJson
 
-_parseAsync = (data, reviver, filename, cb) ->
-  content = null
-  error = null
-
-  try
-    content = _parse data, reviver, filename
-  catch err
-    content = {}
-    error = new Errorifier
-      code: 'ENOVALIDJSON',
-      message: err.message
-  finally
-    process.nextTick ->
-      cb error, content
+_parseAsync = ->
+  parse = wrapSync _parse
+  ensureAsync parse, arguments
 
 module.exports =
 
@@ -82,8 +65,8 @@ module.exports =
     {data, reviver, filename}  = Args([
       { data     : Args.STRING   | Args.Required, _check: (data) ->
         data = if data instanceof Buffer then data.toString() else data }
-      { reviver  : Args.FUNCTION | Args.Optional }
-      { filename : Args.STRING   | Args.Optional }
+      { reviver  : Args.FUNCTION | Args.Optional                        }
+      { filename : Args.STRING   | Args.Optional                        }
     ], args)
 
     return promise _parseAsync, data, reviver, filename unless cb
@@ -109,10 +92,10 @@ module.exports =
 
   saveAsync: ->
     {filepath, data, opts, cb}  = Args([
-      { filepath : Args.STRING   | Args.Required                             }
-      { data     : Args.OBJECT   | Args.Required                             }
-      { opts     : Args.OBJECT   | Args.Optional, _default: indent: '  '     }
-      { cb       : Args.FUNCTION | Args.Optional                             }
+      { filepath : Args.STRING   | Args.Required                         }
+      { data     : Args.OBJECT   | Args.Required                         }
+      { opts     : Args.OBJECT   | Args.Optional, _default: indent: '  ' }
+      { cb       : Args.FUNCTION | Args.Optional                         }
     ], arguments)
 
     return nodeify _saveAsync(filepath, data, opts), cb if cb
