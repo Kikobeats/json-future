@@ -10,8 +10,7 @@ loadJsonFile  = require 'load-json-file'
 writeJsonFile = require 'write-json-file'
 
 ensureAsync = (fn, args) ->
-  process.nextTick ->
-    fn.apply null, args
+  process.nextTick fn.apply null, args
 
 _stringify = (data, replacer, space) ->
   JSON.stringify(data, replacer, space) + '\n'
