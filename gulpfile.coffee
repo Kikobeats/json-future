@@ -35,7 +35,7 @@ banner = [
 gulp.task 'browserify', ->
   browserify
       extensions: ['.coffee', '.js']
-  .transform coffeeify
+  .transform coffeeify, global: true
   .require(src.main, { expose: module.shortcut })
   .ignore('coffee-script')
   .bundle()
