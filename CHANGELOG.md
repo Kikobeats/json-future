@@ -1,7 +1,18 @@
+<a name="1.1.0"></a>
+# 1.1.0 (2015-10-25)
+
+
+* Added /register file ([9892186](https://github.com/kikobeats/json-future/commit/9892186))
+* unnecessary function level ([2ea52e8](https://github.com/kikobeats/json-future/commit/2ea52e8))
+* updated documentation ([d8fe4b4](https://github.com/kikobeats/json-future/commit/d8fe4b4))
+
+
+
 <a name="1.0.3"></a>
 ## 1.0.3 (2015-10-24)
 
 
+* 1.0.3 releases ([7efa9db](https://github.com/kikobeats/json-future/commit/7efa9db))
 * parse coffee globally for generate browser version ([c66c93f](https://github.com/kikobeats/json-future/commit/c66c93f))
 * unified async and sync error codes ([525b461](https://github.com/kikobeats/json-future/commit/525b461))
 
