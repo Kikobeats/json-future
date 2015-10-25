@@ -13,9 +13,11 @@
 
 ## Why
 
-* High level methods for manipulate JSON files.
+* High level methods for manipulate JSON files (stringify, parse, load and save).
 * Backward compatibility with JSON Object in Node or Browser.
 * Async support (Node Callback style and Promise).
+
+JSON Future is based into a set of cool libraries to handle JSON, but some of this libraries uses promises or callback style. This library adds an extra layer to call these libraries uniformly.
 
 ## Install
 
