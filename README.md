@@ -47,6 +47,12 @@ Don't be afraid to replace for the default `JSON` object. The library is special
 JSON = require('json-future');
 ```
 
+Also you can do this action using the `register` helper:
+
+```js
+require('json-future/register')
+``
+
 ## API
 
 In `async` methods, if you don't provide a callback for node style, then the method return a `Promise`.
