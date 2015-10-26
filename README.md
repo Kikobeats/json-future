@@ -53,7 +53,7 @@ Also you can do this action using the `register` helper:
 
 ```js
 require('json-future/register')
-``
+```
 
 ## API
 
