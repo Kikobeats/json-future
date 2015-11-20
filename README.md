@@ -1,4 +1,4 @@
-# json-future
+# JSON Future
 
 ![Last version](https://img.shields.io/github/tag/Kikobeats/json-future.svg?style=flat-square)
 [![Build Status](http://img.shields.io/travis/Kikobeats/json-future/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/json-future)
