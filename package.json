@@ -30,7 +30,6 @@
     "args-js": "latest",
     "cb2promise": "latest",
     "coffee-script": "latest",
-    "errorifier": "latest",
     "load-json-file": "latest",
     "nodeify": "latest",
     "parse-json": "latest",
