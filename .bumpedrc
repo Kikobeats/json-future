@@ -1,10 +1,10 @@
 files: [
-  "package.json"
-  "bower.json"
+  'package.json'
 ]
+
 plugins:
 
-  pretrelease:
+  prerelease:
 
     'Linting config files':
       plugin: 'bumped-finepack'
@@ -14,6 +14,14 @@ plugins:
     'Generating CHANGELOG file':
       plugin: 'bumped-changelog'
 
-    'Commit the new version':
+    'Commiting new version':
       plugin: 'bumped-terminal'
-      command: 'git add . && git commit -m "$newVersion releases"'
+      command: 'git add CHANGELOG.md package.json && git commit -m "$newVersion releases" && git push origin master'
+
+    'Publishing tag at Github':
+      plugin: 'bumped-terminal'
+      command: 'git tag $newVersion && git push origin $newVersion'
+
+    'Publishing at NPM':
+      plugin: 'bumped-terminal'
+      command: 'npm publish'
