@@ -33,12 +33,11 @@ banner = [
 # -- Tasks ---------------------------------------------------------------------
 
 gulp.task 'browserify', ->
-  browserify
-      extensions: ['.coffee', '.js']
-  .transform coffeeify, global: true
-  .require(src.main, { expose: module.shortcut })
-  .ignore('coffee-script')
-  .bundle()
+  browserify extensions: ['.coffee', '.js']
+    .transform coffeeify, global: true
+    .require(src.main, { expose: module.shortcut})
+    .ignore('coffee-script')
+    .bundle().on('error', gutil.log)
   .pipe source module.filename
   .pipe buffer()
   .pipe uglify()
