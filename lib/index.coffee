@@ -1,36 +1,9 @@
 'use strict'
 
-Args          = require 'args-js'
-nodeify       = require 'nodeify'
-wrapSync      = require 'wrap-sync'
-promise       = require 'cb2promise'
-parseJson     = require 'parse-json'
-loadJsonFile  = require 'load-json-file'
-writeJsonFile = require 'write-json-file'
-
-ensureAsync = (fn, args) ->
-  process.nextTick -> fn.apply null, args
-
-_stringify = (data, replacer, space) ->
-  JSON.stringify(data, replacer, space) + '\n'
-
-_stringifyAsync = ->
-  stringify = wrapSync _stringify
-  ensureAsync stringify, arguments
-
-_loadAsync = loadJsonFile
-
-_load = loadJsonFile.sync
-
-_saveAsync = writeJsonFile
-
-_save = writeJsonFile.sync
-
-_parse = parseJson
-
-_parseAsync = ->
-  parse = wrapSync _parse
-  ensureAsync parse, arguments
+util    = require './util'
+Args    = require 'args-js'
+nodeify = require 'nodeify'
+promise = require 'cb2promise'
 
 module.exports =
 
@@ -44,8 +17,8 @@ module.exports =
       { space   : Args.NUMBER   | Args.Optional, _default: 2 }
     ], args)
 
-    return promise _stringifyAsync, data, replacer, space unless cb
-    _stringifyAsync data, replacer, space, cb
+    return promise util.stringifyAsync, data, replacer, space unless cb
+    util.stringifyAsync data, replacer, space, cb
 
   stringify: ->
     {data, replacer, space}  = Args([
@@ -54,7 +27,7 @@ module.exports =
       { space   : Args.NUMBER   | Args.Optional, _default: 2 }
     ], arguments)
 
-    _stringify data, replacer, space
+    util.stringify data, replacer, space
 
   parseAsync: ->
     args = Array.prototype.slice.call arguments
@@ -67,10 +40,10 @@ module.exports =
       { filename : Args.STRING   | Args.Optional                        }
     ], args)
 
-    return promise _parseAsync, data, reviver, filename unless cb
-    _parseAsync data, reviver, filename, cb
+    return promise util.parseAsync, data, reviver, filename unless cb
+    util.parseAsync data, reviver, filename, cb
 
-  parse: parseJson
+  parse: util.parse
 
   loadAsync: ->
     {filepath, opts, cb}  = Args([
@@ -78,15 +51,15 @@ module.exports =
       { cb       : Args.FUNCTION | Args.Optional }
     ], arguments)
 
-    return nodeify _loadAsync(filepath), cb if cb
-    _loadAsync filepath
+    return nodeify util.loadAsync(filepath), cb if cb
+    util.loadAsync filepath
 
   load: ->
     {filepath, opts}  = Args([
       { filepath : Args.STRING | Args.Required }
     ], arguments)
 
-    _load filepath
+    util.load filepath
 
   saveAsync: ->
     {filepath, data, opts, cb}  = Args([
@@ -96,8 +69,8 @@ module.exports =
       { cb       : Args.FUNCTION | Args.Optional                         }
     ], arguments)
 
-    return nodeify _saveAsync(filepath, data, opts), cb if cb
-    _saveAsync filepath
+    return nodeify util.saveAsync(filepath, data, opts), cb if cb
+    util.saveAsync filepath
 
   save: ->
     {filepath, data, opts, cb}  = Args([
@@ -106,4 +79,4 @@ module.exports =
       { opts     : Args.OBJECT | Args.Optional, _default: indent: '  ' }
     ], arguments)
 
-    _save filepath, data, opts
+    util.save filepath, data, opts
