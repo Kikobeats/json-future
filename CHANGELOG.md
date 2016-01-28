@@ -1,7 +1,18 @@
+<a name="1.1.3"></a>
+## 1.1.3 (2016-01-28)
+
+
+* add clean script ([2be34e7](https://github.com/kikobeats/json-future/commit/2be34e7))
+* Little refactor ([799bdeb](https://github.com/kikobeats/json-future/commit/799bdeb))
+* update scripts ([b9fe0b9](https://github.com/kikobeats/json-future/commit/b9fe0b9))
+
+
+
 <a name="1.1.2"></a>
 ## 1.1.2 (2015-11-20)
 
 
+* 1.1.2 releases ([16deefd](https://github.com/kikobeats/json-future/commit/16deefd))
 * deleted unnecessary dependency ([d31cb6f](https://github.com/kikobeats/json-future/commit/d31cb6f))
 * Update README.md ([90804f8](https://github.com/kikobeats/json-future/commit/90804f8))
 * updated bumped config ([c689e24](https://github.com/kikobeats/json-future/commit/c689e24))
