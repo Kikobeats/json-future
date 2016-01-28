@@ -59,6 +59,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
+    "clean": "rm -rf node_modules",
     "lint": "coffeelint lib",
     "pretest": "npm run lint",
     "test": "mocha"
