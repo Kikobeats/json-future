@@ -1,9 +1,18 @@
+<a name="1.1.4"></a>
+## 1.1.4 (2016-01-29)
+
+
+* Fix dependencies ([b102590](https://github.com/kikobeats/json-future/commit/b102590))
+
+
+
 <a name="1.1.3"></a>
 ## 1.1.3 (2016-01-28)
 
 
-* add clean script ([2be34e7](https://github.com/kikobeats/json-future/commit/2be34e7))
 * Little refactor ([799bdeb](https://github.com/kikobeats/json-future/commit/799bdeb))
+* Release 1.1.3 ([2b5333f](https://github.com/kikobeats/json-future/commit/2b5333f))
+* add clean script ([2be34e7](https://github.com/kikobeats/json-future/commit/2be34e7))
 * update scripts ([b9fe0b9](https://github.com/kikobeats/json-future/commit/b9fe0b9))
 
 
@@ -13,8 +22,8 @@
 
 
 * 1.1.2 releases ([16deefd](https://github.com/kikobeats/json-future/commit/16deefd))
-* deleted unnecessary dependency ([d31cb6f](https://github.com/kikobeats/json-future/commit/d31cb6f))
 * Update README.md ([90804f8](https://github.com/kikobeats/json-future/commit/90804f8))
+* deleted unnecessary dependency ([d31cb6f](https://github.com/kikobeats/json-future/commit/d31cb6f))
 * updated bumped config ([c689e24](https://github.com/kikobeats/json-future/commit/c689e24))
 * updated travis builds ([24116c9](https://github.com/kikobeats/json-future/commit/24116c9))
 
@@ -25,8 +34,8 @@
 
 
 * 1.1.1 releases ([ea52a83](https://github.com/kikobeats/json-future/commit/ea52a83))
-* fixed ensureAsync ([19f50c7](https://github.com/kikobeats/json-future/commit/19f50c7))
 * Update README.md ([b9df73a](https://github.com/kikobeats/json-future/commit/b9df73a))
+* fixed ensureAsync ([19f50c7](https://github.com/kikobeats/json-future/commit/19f50c7))
 
 
 
@@ -74,6 +83,9 @@
 
 
 * 1.0.0 releases ([06be5d4](https://github.com/kikobeats/json-future/commit/06be5d4))
+* Update README.md ([9c721af](https://github.com/kikobeats/json-future/commit/9c721af))
+* Update README.md ([e96e618](https://github.com/kikobeats/json-future/commit/e96e618))
+* Update README.md ([3c94a66](https://github.com/kikobeats/json-future/commit/3c94a66))
 * added documentation and bump config ([ed6f083](https://github.com/kikobeats/json-future/commit/ed6f083))
 * added missing dependency ([77ad193](https://github.com/kikobeats/json-future/commit/77ad193))
 * added missing dependency ([d1a4723](https://github.com/kikobeats/json-future/commit/d1a4723))
@@ -82,9 +94,6 @@
 * moar keywords ([4e56040](https://github.com/kikobeats/json-future/commit/4e56040))
 * rewritten ([a0078cb](https://github.com/kikobeats/json-future/commit/a0078cb))
 * rewritten based in dependencies ([849698f](https://github.com/kikobeats/json-future/commit/849698f))
-* Update README.md ([e96e618](https://github.com/kikobeats/json-future/commit/e96e618))
-* Update README.md ([3c94a66](https://github.com/kikobeats/json-future/commit/3c94a66))
-* Update README.md ([9c721af](https://github.com/kikobeats/json-future/commit/9c721af))
 * updated description ([bf093e4](https://github.com/kikobeats/json-future/commit/bf093e4))
 
 
