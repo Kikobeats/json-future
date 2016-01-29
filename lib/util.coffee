@@ -1,7 +1,7 @@
 'use strict'
 
 parse         = require 'parse-json'
-wrapSync      = require 'async.wrapsync'
+asyncify      = require 'async.wrapsync'
 loadJsonFile  = require 'load-json-file'
 writeJsonFile = require 'write-json-file'
 stringifySafe = require 'json-stringify-safe'
@@ -13,10 +13,10 @@ stringify = (data, replacer, space) ->
   stringifySafe(data, replacer, space) + '\n'
 
 module.exports.stringify = stringify
-module.exports.stringifyAsync = -> ensureAsync wrapSync(stringify), arguments
+module.exports.stringifyAsync = -> ensureAsync asyncify(stringify), arguments
 
 module.exports.parse = parse
-module.exports.parseAsync = -> ensureAsync wrapSync(parse), arguments
+module.exports.parseAsync = -> ensureAsync asyncify(parse), arguments
 
 module.exports.load = loadJsonFile.sync
 module.exports.loadAsync = loadJsonFile
