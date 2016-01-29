@@ -1,8 +1,18 @@
+<a name="1.1.5"></a>
+## 1.1.5 (2016-01-29)
+
+
+* No more fake async ([15a785b](https://github.com/kikobeats/json-future/commit/15a785b))
+* Update variable name ([267e3dc](https://github.com/kikobeats/json-future/commit/267e3dc))
+
+
+
 <a name="1.1.4"></a>
 ## 1.1.4 (2016-01-29)
 
 
 * Fix dependencies ([b102590](https://github.com/kikobeats/json-future/commit/b102590))
+* Release 1.1.4 ([e7c3531](https://github.com/kikobeats/json-future/commit/e7c3531))
 
 
 
