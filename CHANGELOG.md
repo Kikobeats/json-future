@@ -1,3 +1,13 @@
+<a name="2.0.0"></a>
+# 2.0.0 (2016-06-19)
+
+* Drop bower ([89c5f09](https://github.com/kikobeats/json-future/commit/89c5f09))
+* Refactor scaffold ([94d00fc](https://github.com/kikobeats/json-future/commit/94d00fc))
+* Release 1.1.6 ([0cbbd6e](https://github.com/kikobeats/json-future/commit/0cbbd6e))
+* Update deps ([5edf2de](https://github.com/kikobeats/json-future/commit/5edf2de))
+
+
+
 <a name="1.1.6"></a>
 ## 1.1.6 (2016-06-19)
 
