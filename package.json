@@ -2,7 +2,7 @@
   "name": "json-future",
   "description": "Unbelievable and Modern JSON interface.",
   "homepage": "https://github.com/Kikobeats/json-future",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "./index.js",
   "author": {
     "name": "Kiko Beats",
@@ -56,8 +56,8 @@
     "lib"
   ],
   "scripts": {
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rm -rf node_modules",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "coffeelint lib",
     "pretest": "npm run lint",
     "test": "nyc --extension .coffee mocha"
