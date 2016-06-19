@@ -26,28 +26,16 @@ JSON Future is based into a set of cool libraries to handle JSON, but some of th
 npm install json-future --save
 ```
 
-If you want to use in the browser (powered by [Browserify](http://browserify.org/)):
-
-```bash
-bower install json-future --save
-```
-
-and later link in your HTML:
-
-```html
-<script src="bower_components/json-future/dist/json-future.js"></script>
-```
-
 ## Usage
 
 ```js
-var jsonFuture = require('json-future');
+var jsonFuture = require('json-future')
 ```
 
 Don't be afraid to replace for the default `JSON` object. The library is specially designed for be compatible and don't break your code:
 
 ```js
-JSON = require('json-future');
+JSON = require('json-future')
 ```
 
 Also you can do this action using the `register` helper:
@@ -60,7 +48,7 @@ require('json-future/register')
 
 In `async` methods, if you don't provide a callback for node style, then the method return a `Promise`.
 
-### .stringify(input, [replacer], [space])
+### .stringify(input, [replacer], [space])g
 ### .stringifyAsync(input, [replacer], [space], [cb])
 
 Creates the `string` version of the input.
