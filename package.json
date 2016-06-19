@@ -41,27 +41,26 @@
     "write-json-file": "~2.0.0"
   },
   "devDependencies": {
-    "browserify": "latest",
-    "coffeeify": "latest",
     "coffeelint": "latest",
+    "coveralls": "latest",
     "git-dirty": "latest",
-    "gulp": "latest",
-    "gulp-header": "latest",
-    "gulp-uglify": "latest",
-    "gulp-util": "latest",
     "mocha": "latest",
-    "should": "latest",
-    "vinyl-buffer": "latest",
-    "vinyl-source-stream": "latest"
+    "nyc": "latest",
+    "should": "latest"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4"
   },
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "scripts": {
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rm -rf node_modules",
     "lint": "coffeelint lib",
     "pretest": "npm run lint",
-    "test": "mocha"
+    "test": "nyc --extension .coffee mocha"
   },
   "license": "MIT"
 }
