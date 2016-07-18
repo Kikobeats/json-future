@@ -1,3 +1,14 @@
+<a name="2.0.1"></a>
+## 2.0.1 (2016-07-18)
+
+* Add sliced dep ([e4c3279](https://github.com/kikobeats/json-future/commit/e4c3279))
+* Avoid transpiling ([45b2ce9](https://github.com/kikobeats/json-future/commit/45b2ce9))
+* Extract common ([9553254](https://github.com/kikobeats/json-future/commit/9553254))
+* Refactor export ([b85fd09](https://github.com/kikobeats/json-future/commit/b85fd09))
+* Tweaks ([20e5517](https://github.com/kikobeats/json-future/commit/20e5517))
+
+
+
 <a name="2.0.0"></a>
 # 2.0.0 (2016-06-19)
 

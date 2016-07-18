@@ -2,7 +2,7 @@
   "name": "json-future",
   "description": "Unbelievable and Modern JSON interface.",
   "homepage": "https://github.com/Kikobeats/json-future",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "lib",
   "author": {
     "name": "Kiko Beats",
@@ -41,12 +41,12 @@
     "write-json-file": "~2.0.0"
   },
   "devDependencies": {
-    "standard": "latest",
     "coveralls": "latest",
     "git-dirty": "latest",
     "mocha": "latest",
     "nyc": "latest",
-    "should": "latest"
+    "should": "latest",
+    "standard": "latest"
   },
   "engines": {
     "node": ">= 4"
