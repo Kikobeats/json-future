@@ -3,7 +3,7 @@
   "description": "Unbelievable and Modern JSON interface.",
   "homepage": "https://github.com/Kikobeats/json-future",
   "version": "2.0.0",
-  "main": "./index.js",
+  "main": "lib",
   "author": {
     "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
@@ -31,9 +31,8 @@
   ],
   "dependencies": {
     "args-js": "~0.10.11",
-    "async.wrapsync": "~1.0.2",
+    "async": "~2.0.0",
     "cb2promise": "~1.0.2",
-    "coffee-script": "~1.10.0",
     "json-stringify-safe": "~5.0.1",
     "load-json-file": "~2.0.0",
     "nodeify": "~1.0.0",
@@ -41,7 +40,7 @@
     "write-json-file": "~2.0.0"
   },
   "devDependencies": {
-    "coffeelint": "latest",
+    "standard": "latest",
     "coveralls": "latest",
     "git-dirty": "latest",
     "mocha": "latest",
@@ -52,15 +51,15 @@
     "node": ">= 4"
   },
   "files": [
-    "index.js",
-    "lib"
+    "lib",
+    "register.js"
   ],
   "scripts": {
     "clean": "rm -rf node_modules",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "coffeelint lib",
+    "lint": "standard lib",
     "pretest": "npm run lint",
-    "test": "nyc --extension .coffee mocha"
+    "test": "nyc mocha"
   },
   "license": "MIT"
 }

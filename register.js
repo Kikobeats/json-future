@@ -1,1 +1,1 @@
-(window || global).JSON = require('./index.js');
+;(window || global).JSON = require('./lib')
