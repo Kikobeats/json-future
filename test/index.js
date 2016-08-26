@@ -1,17 +1,12 @@
 'use strict'
-var FIXTURES, JSON, fs, parseJson, path, should
 
-fs = require('fs')
+var parseJson = require('parse-json')
+var should = require('should')
+var path = require('path')
+var jsonFuture = require('..')
+var fs = require('fs')
 
-JSON = require('..')
-
-should = require('should')
-
-parseJson = require('parse-json')
-
-path = require('path')
-
-FIXTURES = {
+var FIXTURES = {
   string: '{\n  "foo": "bar"\n}\n',
   object: {
     foo: 'bar'
@@ -24,71 +19,70 @@ describe('JSON Future ::', function () {
   after(function (done) {
     return fs.unlink(FIXTURES.path2, done)
   })
+
   describe('sync', function () {
     it('.parse', function () {
-      var json
-      json = JSON.parse(FIXTURES.string)
-      return json.foo.should.be.equal(FIXTURES.object.foo)
+      var json = jsonFuture.parse(FIXTURES.string)
+      json.foo.should.be.equal(FIXTURES.object.foo)
     })
+
     it('.stringify', function () {
-      var string
-      string = JSON.stringify(FIXTURES.object)
-      return string.should.be.equal(FIXTURES.string)
+      var string = jsonFuture.stringify(FIXTURES.object)
+      string.should.be.equal(FIXTURES.string)
     })
+
     it('.load', function () {
-      var json
-      json = JSON.load(FIXTURES.path)
-      return json.foo.should.be.equal(FIXTURES.object.foo)
+      var json = jsonFuture.load(FIXTURES.path)
+      json.foo.should.be.equal(FIXTURES.object.foo)
     })
-    return it('.save', function () {
-      var json
-      JSON.save(FIXTURES.path2, {
-        hello: 'world'
-      })
-      json = JSON.load(FIXTURES.path2)
-      return json.hello.should.be.equal('world')
+
+    it('.save', function () {
+      jsonFuture.save(FIXTURES.path2, {hello: 'world'})
+      var json = jsonFuture.load(FIXTURES.path2)
+      json.hello.should.be.equal('world')
     })
   })
-  return describe('async', function () {
+
+  describe('async', function () {
     describe('.parseAsync', function () {
       it('String', function (done) {
-        return JSON.parseAsync(FIXTURES.string, function (err, data) {
+        jsonFuture.parseAsync(FIXTURES.string, function (err, data) {
           data.foo.should.be.equal(FIXTURES.object.foo)
-          return done(err)
+          done(err)
         })
       })
-      return it('Buffer', function (done) {
-        var buff
-        buff = new Buffer(FIXTURES.string)
-        return JSON.parseAsync(buff, function (err, data) {
+
+      it('Buffer', function (done) {
+        var buff = new Buffer(FIXTURES.string)
+        jsonFuture.parseAsync(buff, function (err, data) {
           data.foo.should.be.equal(FIXTURES.object.foo)
-          return done(err)
+          done(err)
         })
       })
     })
+
     it('.stringifyAsync', function (done) {
-      return JSON.stringifyAsync(FIXTURES.object, function (err, string) {
+      jsonFuture.stringifyAsync(FIXTURES.object, function (err, string) {
         string.should.be.equal(FIXTURES.string)
-        return done(err)
+        done(err)
       })
     })
+
     it('.loadAsync', function (done) {
-      return JSON.loadAsync(FIXTURES.path, function (err, json) {
+      jsonFuture.loadAsync(FIXTURES.path, function (err, json) {
         json.foo.should.be.equal(FIXTURES.object.foo)
-        return done(err)
+        done(err)
       })
     })
-    return it('saveAsync', function (done) {
-      return JSON.saveAsync(FIXTURES.path2, {
+
+    it('saveAsync', function (done) {
+      jsonFuture.saveAsync(FIXTURES.path2, {
         hello: 'world2'
       }, function (err) {
-        var json
-        if (err) {
-          return done(err)
-        }
-        return json = JSON.loadAsync(FIXTURES.path2, function (err, json) {
+        if (err) return done(err)
+        jsonFuture.loadAsync(FIXTURES.path2, function (err, json) {
           json.hello.should.be.equal('world2')
-          return done(err)
+          done(err)
         })
       })
     })
