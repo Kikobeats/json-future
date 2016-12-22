@@ -48,7 +48,7 @@ require('json-future/register')
 
 In `async` methods, if you don't provide a callback for node style, then the method return a `Promise`.
 
-### .stringify(input, [replacer], [space])g
+### .stringify(input, [replacer], [space])
 ### .stringifyAsync(input, [replacer], [space], [cb])
 
 Creates the `string` version of the input.
