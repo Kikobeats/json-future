@@ -1,5 +1,11 @@
 # JSON Future
 
+<h1 align="center">
+  <img src="logo.png" alt="json-future">
+  <br>
+  <br>
+</h1>
+
 ![Last version](https://img.shields.io/github/tag/Kikobeats/json-future.svg?style=flat-square)
 [![Build Status](http://img.shields.io/travis/Kikobeats/json-future/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/json-future)
 [![Coverage Status](https://img.shields.io/coveralls/Kikobeats/json-future.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/json-future)
@@ -8,14 +14,12 @@
 [![NPM Status](http://img.shields.io/npm/dm/json-future.svg?style=flat-square)](https://www.npmjs.org/package/json-future)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> Unbelievable and Modern JSON interface. Prollyfills [propositions for ECMAScript 7](https://github.com/mohsen1/async-json).
-
-> Prollyfill: A polyfill for a not yet standardized API.
+> Modern JSON interface. [propositions for ECMAScript 7](https://github.com/mohsen1/async-json).
 
 ## Why
 
-* High level methods for manipulate JSON files (stringify, parse, load and save).
-* Backward compatibility with JSON Object in Node or Browser.
+* High level methods for manipulate JSON files.
+* Backward compatibility with JSON Object in Node/Browser.
 * Async support (callback/promise) based on [ECMAScript proposal](https://github.com/mohsen1/async-json).
 
 JSON Future is based into a set of cool libraries to handle JSON, but some of this libraries uses promises or callback style. This library adds an extra layer to call these libraries uniformly.
@@ -29,7 +33,7 @@ npm install json-future --save
 ## Usage
 
 ```js
-var jsonFuture = require('json-future')
+const jsonFuture = require('json-future')
 ```
 
 Don't be afraid to replace for the default `JSON` object. The library is specially designed for be compatible and don't break your code:
