@@ -1,3 +1,23 @@
+<a name="2.1.0"></a>
+# 2.1.0 (2017-04-16)
+
+* Fix tests ([1b4717c](https://github.com/kikobeats/json-future/commit/1b4717c))
+* Refactor ([48abbad](https://github.com/kikobeats/json-future/commit/48abbad))
+* Refactor tests ([25797b0](https://github.com/kikobeats/json-future/commit/25797b0))
+* Remove unnecessary ([4449377](https://github.com/kikobeats/json-future/commit/4449377))
+* Remove unnnecessary ([840d14a](https://github.com/kikobeats/json-future/commit/840d14a))
+* Update compositor.json ([7b27b0e](https://github.com/kikobeats/json-future/commit/7b27b0e))
+* Update compositor.json ([430b25a](https://github.com/kikobeats/json-future/commit/430b25a))
+* Update docs ([dca7f5c](https://github.com/kikobeats/json-future/commit/dca7f5c))
+* Update logo ([cd78ded](https://github.com/kikobeats/json-future/commit/cd78ded))
+* Update README.md ([f5b6ba2](https://github.com/kikobeats/json-future/commit/f5b6ba2))
+* Update README.md ([ff95bf3](https://github.com/kikobeats/json-future/commit/ff95bf3))
+* Update README.md ([c3c4c3a](https://github.com/kikobeats/json-future/commit/c3c4c3a))
+* Update travis builds ([c8848e4](https://github.com/kikobeats/json-future/commit/c8848e4))
+* chore(package): update async to version 2.1.1 ([b33d83f](https://github.com/kikobeats/json-future/commit/b33d83f))
+
+
+
 <a name="2.0.1"></a>
 ## 2.0.1 (2016-07-18)
 

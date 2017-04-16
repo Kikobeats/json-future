@@ -2,11 +2,11 @@
   "name": "json-future",
   "description": "Unbelievable and Modern JSON interface.",
   "homepage": "https://github.com/Kikobeats/json-future",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "lib",
   "author": {
-    "name": "Kiko Beats",
     "email": "josefrancisco.verdu@gmail.com",
+    "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
   "repository": {
@@ -65,9 +65,9 @@
   "license": "MIT",
   "standard": {
     "globals": [
+      "after",
       "describe",
-      "it",
-      "after"
+      "it"
     ]
   }
 }
