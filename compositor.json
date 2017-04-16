@@ -89,37 +89,6 @@
   },
   "content": [
     {
-      "component": "nav",
-      "links": [
-        {
-          "href": "https://github.com/Kikobeats/json-future",
-          "text": "GitHub"
-        },
-        {
-          "href": "https://npmjs.com/package/json-future",
-          "text": "npm"
-        }
-      ]
-    },
-    {
-      "component": "header",
-      "heading": "json-future",
-      "subhead": "Unbelievable and Modern JSON interface. Prollyfills propositions for ECMAScript 7.",
-      "children": [
-        {
-          "component": "ui/TweetButton",
-          "text": "json-future: Unbelievable and Modern JSON interface. Prollyfills propositions for ECMAScript 7.",
-          "url": ""
-        },
-        {
-          "component": "ui/GithubButton",
-          "user": "Kikobeats",
-          "repo": "json-future"
-        }
-      ],
-      "text": "v2.0.1"
-    },
-    {
       "component": "article",
       "metadata": {
         "source": "github.readme"
