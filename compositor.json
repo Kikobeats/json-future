@@ -1,0 +1,143 @@
+{
+  "name": "Kikobeats/json-future",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "JSON Future",
+  "branch": "",
+  "style": {
+    "name": "Default",
+    "componentSet": {
+      "nav": "nav/BasicNav",
+      "header": "header/BannerHeader",
+      "article": "article/BasicArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "-apple-system, BlinkMacSystemFont, sans-serif",
+    "fontWeight": 400,
+    "bold": 600,
+    "lineHeight": 1.5,
+    "typeScale": [
+      72,
+      48,
+      24,
+      20,
+      16,
+      14,
+      12
+    ],
+    "monospace": "Menlo, monospace",
+    "heading": {
+      "fontFamily": null,
+      "fontStyle": null,
+      "fontWeight": 600,
+      "lineHeight": 1.25,
+      "textTransform": null,
+      "letterSpacing": null
+    },
+    "h0": {},
+    "h1": {},
+    "h2": {},
+    "h3": {},
+    "h4": {},
+    "h5": {},
+    "h6": {},
+    "alternativeText": {},
+    "space": [
+      0,
+      8,
+      16,
+      32,
+      48,
+      64,
+      96
+    ],
+    "layout": {
+      "maxWidth": 1024,
+      "centered": false
+    },
+    "colors": {
+      "text": "#111",
+      "background": "#fff",
+      "primary": "#08e",
+      "secondary": "#059",
+      "highlight": "#e08",
+      "border": "#ddd",
+      "muted": "#eee"
+    },
+    "border": {
+      "width": 1,
+      "radius": 2
+    },
+    "link": {},
+    "button": {
+      "hover": {
+        "boxShadow": "inset 0 0 0 999px rgba(0, 0, 0, .125)"
+      }
+    },
+    "input": {},
+    "body": {
+      "margin": 0
+    },
+    "breakpoints": {
+      "xs": "@media screen and (max-width:40em)",
+      "sm": "@media screen and (min-width:40em)",
+      "md": "@media screen and (min-width:52em)",
+      "lg": "@media screen and (min-width:64em)"
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "https://github.com/Kikobeats/json-future",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://npmjs.com/package/json-future",
+          "text": "npm"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "json-future",
+      "subhead": "Unbelievable and Modern JSON interface. Prollyfills propositions for ECMAScript 7.",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "json-future: Unbelievable and Modern JSON interface. Prollyfills propositions for ECMAScript 7.",
+          "url": ""
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "Kikobeats",
+          "repo": "json-future"
+        }
+      ],
+      "text": "v2.0.1"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "<h1>JSON Future</h1>\n<h1>\n  <img src=\"logo.png\">\n  <br>\n  <br>\n</h1>\n\n<p><img src=\"https://img.shields.io/github/tag/Kikobeats/json-future.svg?style=flat-square\">\n<a href=\"https://travis-ci.org/Kikobeats/json-future\"><img src=\"http://img.shields.io/travis/Kikobeats/json-future/master.svg?style=flat-square\"></a>\n<a href=\"https://coveralls.io/github/Kikobeats/json-future\"><img src=\"https://img.shields.io/coveralls/Kikobeats/json-future.svg?style=flat-square\"></a>\n<a href=\"https://david-dm.org/Kikobeats/json-future\"><img src=\"http://img.shields.io/david/Kikobeats/json-future.svg?style=flat-square\"></a>\n<a href=\"https://david-dm.org/Kikobeats/json-future#info=devDependencies\"><img src=\"http://img.shields.io/david/dev/Kikobeats/json-future.svg?style=flat-square\"></a>\n<a href=\"https://www.npmjs.org/package/json-future\"><img src=\"http://img.shields.io/npm/dm/json-future.svg?style=flat-square\"></a>\n<a href=\"https://paypal.me/Kikobeats\"><img src=\"https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square\"></a></p>\n<blockquote>\n<p>Modern JSON interface. <a href=\"https://github.com/mohsen1/async-json\">propositions for ECMAScript 7</a>.</p>\n</blockquote>\n<h2>Why</h2>\n<ul>\n<li>High level methods for manipulate JSON files.</li>\n<li>Backward compatibility with JSON Object in Node/Browser.</li>\n<li>Async support (callback/promise) based on <a href=\"https://github.com/mohsen1/async-json\">ECMAScript proposal</a>.</li>\n</ul>\n<p>JSON Future is based into a set of cool libraries to handle JSON, but some of this libraries uses promises or callback style. This library adds an extra layer to call these libraries uniformly.</p>\n<h2>Install</h2>\n<pre>npm install json-future --save</pre><h2>Usage</h2>\n<pre><span class=\"hljs-keyword\">const</span> jsonFuture = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&apos;json-future&apos;</span>)</pre><p>Don&apos;t be afraid to replace for the default <code>JSON</code> object. The library is specially designed for be compatible and don&apos;t break your code:</p>\n<pre><span class=\"hljs-built_in\">JSON</span> = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&apos;json-future&apos;</span>)</pre><p>Also you can do this action using the <code>register</code> helper:</p>\n<pre><span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&apos;json-future/register&apos;</span>)</pre><h2>API</h2>\n<p>In <code>async</code> methods, if you don&apos;t provide a callback for node style, then the method return a <code>Promise</code>.</p>\n<h3>.stringify(input, [replacer], [space])</h3>\n<h3>.stringifyAsync(input, [replacer], [space], [cb])</h3>\n<p>Creates the <code>string</code> version of the input.</p>\n<h3>.parse(input, [reviver], [filename])</h3>\n<h3>.parseAsync(input, [reviver], [filename], [cb])</h3>\n<p>Creates the <code>object</code> version of the input.</p>\n<h3>.load(filepath)</h3>\n<h3>.loadAsync(filepath, [cb])</h3>\n<p>Returns the parsed JSON.</p>\n<h3>.save(filepath, data, [options])</h3>\n<h3>.saveAsync(filepath, data, [options], [cb])</h3>\n<p>Stringify and write JSON to a file atomically.</p>\n<h4>options</h4>\n<h5>indent</h5>\n<p>Type: <code>string</code>, <code>number</code>\nDefault: <code>\\t</code></p>\n<p>Indentation as a string or number of spaces.\nPass in <code>null</code> for no formatting.</p>\n<h5>sortKeys</h5>\n<p>Type: <code>boolean</code>, <code>function</code>\nDefault: <code>false</code></p>\n<p>Sort the keys recursively.\nOptionally pass in a <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort\"><code>compare</code></a> function.</p>\n<h5>replacer</h5>\n<p>Type: <code>function</code></p>\n<p>Passed into <a href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify#The_replacer_parameter\"><code>JSON.stringify</code></a>.</p>\n<h5>mode</h5>\n<p>Type: <code>number</code>\nDefault <code>438</code> <em>(0666 in octal)</em></p>\n<p><a href=\"https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation\">Mode</a> used when writing the file.</p>\n<h2>License</h2>\n<p>MIT &#xA9; <a href=\"http://kikobeats.com\">Kiko Beats</a></p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/Kikobeats/json-future",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/Kikobeats",
+          "text": "Kikobeats"
+        }
+      ]
+    }
+  ]
+}
