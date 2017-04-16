@@ -1,7 +1,7 @@
 # JSON Future
 
 <h1 align="center">
-  <img src="logo.png" alt="json-future">
+  <img src="https://i.imgur.com/WSDllwa.png" alt="json-future">
   <br>
   <br>
 </h1>
