@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "args-js": "~0.10.11",
-    "async": "~2.1.1",
+    "async": "~2.3.0",
     "cb2promise": "~1.0.2",
     "json-stringify-safe": "~5.0.1",
     "load-json-file": "~2.0.0",
@@ -62,5 +62,12 @@
     "pretest": "npm run lint",
     "test": "nyc mocha"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "standard": {
+    "globals": [
+      "describe",
+      "it",
+      "after"
+    ]
+  }
 }
