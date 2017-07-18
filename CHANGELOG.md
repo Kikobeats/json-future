@@ -1,3 +1,13 @@
+<a name="2.1.1"></a>
+## 2.1.1 (2017-07-18)
+
+* Update compositor.json ([9ed5947](https://github.com/kikobeats/json-future/commit/9ed5947))
+* Update README.md ([8d53cd6](https://github.com/kikobeats/json-future/commit/8d53cd6))
+* docs(readme): add Greenkeeper badge ([18107e9](https://github.com/kikobeats/json-future/commit/18107e9))
+* chore(package): update dependencies ([def90ac](https://github.com/kikobeats/json-future/commit/def90ac))
+
+
+
 <a name="2.1.0"></a>
 # 2.1.0 (2017-04-16)
 

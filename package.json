@@ -2,7 +2,7 @@
   "name": "json-future",
   "description": "Unbelievable and Modern JSON interface.",
   "homepage": "https://github.com/Kikobeats/json-future",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "main": "lib",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
