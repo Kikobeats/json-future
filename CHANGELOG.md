@@ -1,3 +1,10 @@
+<a name="2.1.2"></a>
+## 2.1.2 (2017-07-19)
+
+* Update homepage ([c61f5c2](https://github.com/kikobeats/json-future/commit/c61f5c2))
+
+
+
 <a name="2.1.1"></a>
 ## 2.1.1 (2017-07-18)
 
