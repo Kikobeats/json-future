@@ -26,6 +26,7 @@
     "interface",
     "load",
     "parse",
+    "save",
     "stringify",
     "write"
   ],
