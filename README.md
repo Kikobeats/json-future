@@ -1,7 +1,5 @@
 # JSON Future
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Kikobeats/json-future.svg)](https://greenkeeper.io/)
-
 <h1 align="center">
   <img src="https://i.imgur.com/WSDllwa.png" alt="json-future">
   <br>
