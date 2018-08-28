@@ -1,3 +1,20 @@
+<a name="2.1.3"></a>
+## 2.1.3 (2018-08-28)
+
+* fix(package): update async to version 2.6.0 ([7c91d50](https://github.com/kikobeats/json-future/commit/7c91d50))
+* fix(package): update load-json-file to version 3.0.0 ([11ae47c](https://github.com/kikobeats/json-future/commit/11ae47c))
+* fix(package): update load-json-file to version 4.0.0 ([0009698](https://github.com/kikobeats/json-future/commit/0009698))
+* fix(package): update load-json-file to version 5.0.0 ([0784a5e](https://github.com/kikobeats/json-future/commit/0784a5e))
+* fix(package): update parse-json to version 3.0.0 ([f8eccf7](https://github.com/kikobeats/json-future/commit/f8eccf7))
+* fix(package): update parse-json to version 4.0.0 ([42f4eaf](https://github.com/kikobeats/json-future/commit/42f4eaf))
+* fix(package): update write-json-file to version 2.3.0 ([62740b7](https://github.com/kikobeats/json-future/commit/62740b7))
+* fix(package): update write-json-file to version 3.0.0 ([fee0e51](https://github.com/kikobeats/json-future/commit/fee0e51))
+* Update package.json ([73a7049](https://github.com/kikobeats/json-future/commit/73a7049))
+* Update README.md ([c8fa6af](https://github.com/kikobeats/json-future/commit/c8fa6af))
+* docs(readme): add Greenkeeper badge ([9937a6e](https://github.com/kikobeats/json-future/commit/9937a6e))
+
+
+
 <a name="2.1.2"></a>
 ## 2.1.2 (2017-07-19)
 
