@@ -1,3 +1,66 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="2.1.4"></a>
+## 2.1.4 (2019-02-12)
+
+
+### Bug Fixes
+
+* **package:** update load-json-file to version 5.1.0 ([6845f01](https://github.com/kikobeats/json-future/commit/6845f01))
+* **package:** update load-json-file to version 5.2.0 ([100c8c0](https://github.com/kikobeats/json-future/commit/100c8c0))
+* **package:** update write-json-file to version 3.1.0 ([08918b8](https://github.com/kikobeats/json-future/commit/08918b8))
+
+
+
+<a name="2.1.3"></a>
+## 2.1.3 (2018-08-28)
+
+
+### Bug Fixes
+
+* **package:** update async to version 2.6.0 ([7c91d50](https://github.com/kikobeats/json-future/commit/7c91d50))
+* **package:** update load-json-file to version 3.0.0 ([11ae47c](https://github.com/kikobeats/json-future/commit/11ae47c))
+* **package:** update load-json-file to version 4.0.0 ([0009698](https://github.com/kikobeats/json-future/commit/0009698))
+* **package:** update load-json-file to version 5.0.0 ([0784a5e](https://github.com/kikobeats/json-future/commit/0784a5e))
+* **package:** update parse-json to version 3.0.0 ([f8eccf7](https://github.com/kikobeats/json-future/commit/f8eccf7))
+* **package:** update parse-json to version 4.0.0 ([42f4eaf](https://github.com/kikobeats/json-future/commit/42f4eaf))
+* **package:** update write-json-file to version 2.3.0 ([62740b7](https://github.com/kikobeats/json-future/commit/62740b7))
+* **package:** update write-json-file to version 3.0.0 ([fee0e51](https://github.com/kikobeats/json-future/commit/fee0e51))
+
+
+
+<a name="2.1.2"></a>
+## 2.1.2 (2017-07-19)
+
+
+
+<a name="2.1.1"></a>
+## 2.1.1 (2017-07-18)
+
+
+
+<a name="2.1.0"></a>
+# 2.1.0 (2017-04-16)
+
+
+
+<a name="2.0.1"></a>
+## 2.0.1 (2016-07-18)
+
+
+
+<a name="2.0.0"></a>
+# 2.0.0 (2016-06-19)
+
+
+
+<a name="1.1.5"></a>
+## 1.1.5 (2016-01-29)
+
+
+
 <a name="2.1.3"></a>
 ## 2.1.3 (2018-08-28)
 
@@ -189,6 +252,3 @@
 * rewritten ([a0078cb](https://github.com/kikobeats/json-future/commit/a0078cb))
 * rewritten based in dependencies ([849698f](https://github.com/kikobeats/json-future/commit/849698f))
 * updated description ([bf093e4](https://github.com/kikobeats/json-future/commit/bf093e4))
-
-
-
