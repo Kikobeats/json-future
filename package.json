@@ -39,7 +39,7 @@
     "nodeify": "~1.0.0",
     "parse-json": "~4.0.0",
     "sliced": "~1.0.1",
-    "write-json-file": "~3.0.0"
+    "write-json-file": "~3.1.0"
   },
   "devDependencies": {
     "coveralls": "latest",
