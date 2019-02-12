@@ -47,7 +47,17 @@
     "mocha": "latest",
     "nyc": "latest",
     "should": "latest",
-    "standard": "latest"
+    "standard": "latest",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "conventional-github-releaser": "latest",
+    "finepack": "latest",
+    "git-authors-cli": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "npm-check-updates": "latest",
+    "standard-version": "latest",
+    "ci-publish": "latest"
   },
   "engines": {
     "node": ">= 4"
@@ -58,10 +68,17 @@
   ],
   "scripts": {
     "clean": "rm -rf node_modules",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "standard lib",
     "pretest": "npm run lint",
-    "test": "nyc mocha"
+    "test": "nyc mocha",
+    "postrelease": "npm run release:tags && npm run release:github && ci-publish",
+    "prerelease": "npm run update:check && git-authors-cli",
+    "release:github": "conventional-github-releaser -p angular",
+    "release:tags": "git push --follow-tags origin HEAD:master",
+    "release": "git add package.json && standard-version -a",
+    "update:check": "ncu -- --error-level 2",
+    "update": "ncu -a"
   },
   "license": "MIT",
   "standard": {
@@ -70,5 +87,29 @@
       "describe",
       "it"
     ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "standard-version": {
+    "scripts": {
+      "prechangelog": "git-authors-cli"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "package.json": [
+        "finepack",
+        "git add"
+      ]
+    }
   }
 }
