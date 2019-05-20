@@ -9,6 +9,12 @@
     "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
+  "contributors": [
+    {
+      "name": "ImgBotApp",
+      "email": "ImgBotHelp@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kikobeats/json-future.git"
@@ -42,22 +48,22 @@
     "write-json-file": "~3.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "ci-publish": "latest",
+    "conventional-github-releaser": "latest",
     "coveralls": "latest",
+    "finepack": "latest",
+    "git-authors-cli": "latest",
     "git-dirty": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
     "mocha": "latest",
+    "npm-check-updates": "latest",
     "nyc": "latest",
     "should": "latest",
     "standard": "latest",
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "conventional-github-releaser": "latest",
-    "finepack": "latest",
-    "git-authors-cli": "latest",
-    "husky": "latest",
-    "lint-staged": "latest",
-    "npm-check-updates": "latest",
-    "standard-version": "latest",
-    "ci-publish": "latest"
+    "standard-version": "latest"
   },
   "engines": {
     "node": ">= 4"
@@ -70,24 +76,17 @@
     "clean": "rm -rf node_modules",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "standard lib",
-    "pretest": "npm run lint",
-    "test": "nyc mocha",
     "postrelease": "npm run release:tags && npm run release:github && ci-publish",
-    "prerelease": "npm run update:check && git-authors-cli",
+    "prerelease": "npm run update:check",
+    "pretest": "npm run lint",
+    "release": "git-authors-cli && git add package.json && standard-version -a",
     "release:github": "conventional-github-releaser -p angular",
     "release:tags": "git push --follow-tags origin HEAD:master",
-    "release": "git add package.json && standard-version -a",
-    "update:check": "ncu -- --error-level 2",
-    "update": "ncu -a"
+    "test": "nyc mocha",
+    "update": "ncu -a",
+    "update:check": "ncu -- --error-level 2"
   },
   "license": "MIT",
-  "standard": {
-    "globals": [
-      "after",
-      "describe",
-      "it"
-    ]
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -99,11 +98,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "standard-version": {
-    "scripts": {
-      "prechangelog": "git-authors-cli"
-    }
-  },
   "lint-staged": {
     "linters": {
       "package.json": [
@@ -112,7 +106,11 @@
       ]
     }
   },
-  "contributors": [
-    "ImgBotApp <ImgBotHelp@gmail.com>"
-  ]
+  "standard": {
+    "globals": [
+      "after",
+      "describe",
+      "it"
+    ]
+  }
 }
