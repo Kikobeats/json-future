@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.9](https://github.com/kikobeats/json-future/compare/v2.1.8...v2.1.9) (2019-05-21)
+
+
+### Bug Fixes
+
+* **package:** update write-json-file to version 4.0.0 ([61f2dac](https://github.com/kikobeats/json-future/commit/61f2dac))
+
+
+
 ### [2.1.8](https://github.com/kikobeats/json-future/compare/v2.1.7...v2.1.8) (2019-05-20)
 
 
