@@ -45,7 +45,7 @@
     "nodeify": "~1.0.1",
     "parse-json": "~4.0.0",
     "sliced": "~1.0.1",
-    "write-json-file": "~4.0.0"
+    "write-json-file": "~4.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
