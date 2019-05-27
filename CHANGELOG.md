@@ -1,3 +1,11 @@
+<a name="2.2.0"></a>
+# 2.2.0 (2019-05-27)
+
+* build: update release message ([78facef](https://github.com/kikobeats/json-future/commit/78facef))
+* fix(package): update async to version 3.0.1 ([f0975ef](https://github.com/kikobeats/json-future/commit/f0975ef))
+
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
