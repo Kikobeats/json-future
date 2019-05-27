@@ -1,3 +1,25 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.2.1](https://github.com/kikobeats/json-future/compare/v2.1.10...v2.2.1) (2019-05-27)
+
+
+
+## 2.2.0 (2019-05-27)
+
+
+### Bug Fixes
+
+* **package:** update async to version 3.0.1 ([f0975ef](https://github.com/kikobeats/json-future/commit/f0975ef))
+
+
+### Build System
+
+* update release message ([78facef](https://github.com/kikobeats/json-future/commit/78facef))
+
+
+
 <a name="2.2.0"></a>
 # 2.2.0 (2019-05-27)
 
