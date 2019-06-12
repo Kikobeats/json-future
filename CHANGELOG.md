@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.2](https://github.com/kikobeats/json-future/compare/v2.2.1...v2.2.2) (2019-06-12)
+
+
+### Bug Fixes
+
+* **package:** update load-json-file to version 6.1.0 ([4546e3f](https://github.com/kikobeats/json-future/commit/4546e3f))
+
+
+
 ### [2.2.1](https://github.com/kikobeats/json-future/compare/v2.1.10...v2.2.1) (2019-05-27)
 
 
