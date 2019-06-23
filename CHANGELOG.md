@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.5](https://github.com/kikobeats/json-future/compare/v2.2.4...v2.2.5) (2019-06-23)
+
+
+### Build System
+
+* ignore credentials ([c68132d](https://github.com/kikobeats/json-future/commit/c68132d))
+* remove bot from authors ([70b21bd](https://github.com/kikobeats/json-future/commit/70b21bd))
+* update scripts ([73d766f](https://github.com/kikobeats/json-future/commit/73d766f))
+
+
+
 ### [2.2.4](https://github.com/kikobeats/json-future/compare/v2.2.3...v2.2.4) (2019-06-23)
 
 
