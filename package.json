@@ -9,12 +9,6 @@
     "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
-  "contributors": [
-    {
-      "name": "ImgBotApp",
-      "email": "ImgBotHelp@gmail.com"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kikobeats/json-future.git"
