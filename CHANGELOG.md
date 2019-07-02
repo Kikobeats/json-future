@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.6](https://github.com/kikobeats/json-future/compare/v2.2.5...v2.2.6) (2019-07-02)
+
+
+### Bug Fixes
+
+* **package:** update parse-json to version 5.0.0 ([079dcd9](https://github.com/kikobeats/json-future/commit/079dcd9))
+
+
+
 ### [2.2.5](https://github.com/kikobeats/json-future/compare/v2.2.4...v2.2.5) (2019-06-23)
 
 
