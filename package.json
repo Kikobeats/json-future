@@ -37,7 +37,7 @@
     "json-stringify-safe": "~5.0.1",
     "load-json-file": "~6.1.0",
     "nodeify": "~1.0.1",
-    "parse-json": "~4.0.0",
+    "parse-json": "~5.0.0",
     "sliced": "~1.0.1",
     "write-json-file": "~4.1.0"
   },
