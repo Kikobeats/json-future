@@ -7,7 +7,7 @@ const fs = require('fs')
 const jsonFuture = require('..')
 
 const FIXTURES = {
-  string: '{\n  "foo": "bar"\n}\n',
+  string: '{\n  "foo": "bar"\n}',
   object: {
     foo: 'bar'
   },
@@ -37,7 +37,7 @@ describe('JSON Future ::', function () {
     })
 
     it('.save', function () {
-      jsonFuture.save(FIXTURES.path2, {hello: 'world'})
+      jsonFuture.save(FIXTURES.path2, { hello: 'world' })
       const json = jsonFuture.load(FIXTURES.path2)
       should(json.hello).be.equal('world')
     })
@@ -46,7 +46,7 @@ describe('JSON Future ::', function () {
   describe('async', function () {
     describe('.parseAsync', function () {
       describe('promise', function () {
-        [
+        ;[
           ['String', FIXTURES.string],
           ['Buffer', Buffer.from(FIXTURES.string)]
         ].forEach(function (pair) {
@@ -66,7 +66,7 @@ describe('JSON Future ::', function () {
       })
 
       describe('callback', function () {
-        [
+        ;[
           ['String', FIXTURES.string],
           ['Buffer', Buffer.from(FIXTURES.string)]
         ].forEach(function (pair) {
@@ -124,9 +124,9 @@ describe('JSON Future ::', function () {
     describe('.saveAsync', function () {
       it('promise', function (done) {
         jsonFuture
-          .saveAsync(FIXTURES.path2, {hello: 'world2'})
+          .saveAsync(FIXTURES.path2, { hello: 'world2' })
           .then(() => jsonFuture.loadAsync(FIXTURES.path2))
-          .then((json) => {
+          .then(json => {
             should(json.hello).be.equal('world2')
             done()
           })
@@ -134,15 +134,19 @@ describe('JSON Future ::', function () {
       })
 
       it('callback', function (done) {
-        jsonFuture.saveAsync(FIXTURES.path2, {
-          hello: 'world2'
-        }, function (err) {
-          if (err) return done(err)
-          jsonFuture.loadAsync(FIXTURES.path2, function (err, json) {
-            should(json.hello).be.equal('world2')
-            done(err)
-          })
-        })
+        jsonFuture.saveAsync(
+          FIXTURES.path2,
+          {
+            hello: 'world2'
+          },
+          function (err) {
+            if (err) return done(err)
+            jsonFuture.loadAsync(FIXTURES.path2, function (err, json) {
+              should(json.hello).be.equal('world2')
+              done(err)
+            })
+          }
+        )
       })
     })
   })

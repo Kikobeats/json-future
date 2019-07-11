@@ -17,16 +17,17 @@
     "url": "https://github.com/Kikobeats/json-future/issues"
   },
   "keywords": [
-    "ECMAScript 7",
-    "ES2016",
+    "ES6",
     "ES7",
     "JSON",
     "async",
+    "circular",
     "future",
     "interface",
     "load",
     "parse",
     "save",
+    "stable",
     "stringify",
     "write"
   ],
@@ -34,7 +35,7 @@
     "args-js": "~0.10.12",
     "async": "~3.1.0",
     "cb2promise": "~1.1.1",
-    "json-stringify-safe": "~5.0.1",
+    "fast-safe-stringify": "~2.0.6",
     "load-json-file": "~6.1.0",
     "nodeify": "~1.0.1",
     "parse-json": "~5.0.0",
