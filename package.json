@@ -40,7 +40,7 @@
     "nodeify": "~1.0.1",
     "parse-json": "~5.0.0",
     "sliced": "~1.0.1",
-    "write-json-file": "~4.1.0"
+    "write-json-file": "~4.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
