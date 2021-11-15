@@ -38,7 +38,7 @@
     "fast-safe-stringify": "~2.1.0",
     "load-json-file": "~6.2.0",
     "nodeify": "~1.0.1",
-    "parse-json": "~5.2.0",
+    "parse-json": "~6.0.1",
     "sliced": "~1.0.1",
     "write-json-file": "~4.3.0"
   },
