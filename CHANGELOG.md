@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 2.2.15 (2022-03-17)
+
 ### [2.2.14](https://github.com/kikobeats/json-future/compare/v2.2.13...v2.2.14) (2021-09-07)
 
 ### [2.2.13](https://github.com/kikobeats/json-future/compare/v2.2.12...v2.2.13) (2021-01-19)
