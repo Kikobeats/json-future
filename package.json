@@ -2,7 +2,7 @@
   "name": "json-future",
   "description": "Unbelievable and Modern JSON interface.",
   "homepage": "https://nicedoc.io/kikobeats/json-future",
-  "version": "2.2.18",
+  "version": "2.2.19",
   "main": "lib",
   "author": {
     "email": "josefrancisco.verdu@gmail.com",
